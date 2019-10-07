@@ -1,0 +1,85 @@
+
+import java.util.*;
+public class Main
+
+{
+	
+   public static void main(String[] args) 
+	
+  {
+	    
+   	 int size;
+	    
+	int a[];
+	    
+	int temp[];
+	    
+	int rotation;
+	   
+	Scanner sc=new Scanner(System.in);
+	
+   	size=sc.nextInt();
+	  
+                  rotation=sc.nextInt();
+                                                 
+	 a=new int[size];
+	 
+ 	temp=new int[size];
+                                           
+     	
+       for(int i=0;i<size;i++)
+	  
+           {
+	  
+           a[i]=sc.nextInt();
+	    
+            temp[i]=a[i];
+	
+           }
+	  
+	
+       while(rotation!=0)
+	   
+             {
+	
+               for(int i=0;i<=size-1;i++)
+	           
+                {
+	      
+	        
+               if(i==size-1)
+	          
+                   {
+	              
+                     a[i]=temp[0];
+	           
+                           for(int j=0;j<size;j++)
+	  
+                             {
+	                     
+                              temp[j]=a[j];
+	                    
+                             }
+	             
+                   } 
+	           
+               else
+	        
+                  a[i]=temp[i+1];
+	            
+                  }
+               
+           rotation--;
+	   
+                }
+	
+        for(int i=0;i<size;i++)
+	
+           {
+	 
+            System.out.print(a[i]+" ");
+	    
+           }   
+      }
+
+}

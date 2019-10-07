@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution
+{
+static int solve(int no,int[] s,int d,int m){
+int j=m;
+int c=0;
+int count=0;
+  for(int i=0;i<=no-m;i++)
+   {
+         j=m-1;
+     while(j>=0)
+     {
+           c=s[i+j]+c;
+           j-- ;
+     }
+     if(c==d)
+     {
+       count++;
+     }
+      c=0;
+  }
+    return count;
+}
+public static void main(String[] args) 
+{
+
+    Scanner sc = new Scanner(System.in);
+    int no=sc.nextInt();
+    int[] s = new int[no];
+   for(int i=0;i<no;i++)
+   {
+     s[i] = sc.nextInt();
+   }
+       int d=sc.nextInt();
+       int m=sc.nextInt();
+       int result=solve(no,s,d,m);
+      System.out.println(result);
+}
+}
